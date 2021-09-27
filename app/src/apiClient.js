@@ -3,16 +3,16 @@ export const getTasks = () => _get("/api/tasks");
 export const addTask = (name) => _post("/api/tasks", { name });
 
 export const getPost1 = async () => {
-  const response = await fetch("/api/posts");
+  const response = await fetch("/api/posts/1");
   return response.json();
 };
 
 export const getPost2 = async () => {
-  const response = await fetch("/api/posts");
+  const response = await fetch("/api/posts/2");
   return response.json();
 };
 export const getPost3 = async () => {
-  const response = await fetch("/api/posts");
+  const response = await fetch("/api/posts/3");
   return response.json();
 };
 // export const addPost = async () => {
