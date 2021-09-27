@@ -9,10 +9,38 @@ const app = express();
 
 //use router in server
 app.use("/api/posts", postRouter);
-postRouter.get("/api/posts", async (request, response) => {
+
+postRouter.get("/api/post", async (request, response) => {
   const post = await db.getPostOne();
   response.json(post);
 });
+
+postRouter.post("/api/post/1", async (request, response) => {
+  const post = await db.addPost1();
+  response.json(post);
+});
+
+postRouter.post("/api/post/2", async (request, response) => {
+  const post = await db.addPost2();
+  response.json(post);
+});
+
+postRouter.post("/api/post/3", async (request, response) => {
+  const post = await db.addPost3();
+  response.json(post);
+});
+
+// app.use("/api/posts", postRouter);
+// postRouter.get("/api/posts", async (request, response) => {
+//   const post = await db.getPostTwo();
+//   response.json(post);
+// });
+
+// app.use("/api/posts", postRouter);
+// postRouter.get("/api/posts", async (request, response) => {
+//   const post = await db.getPostThree();
+//   response.json(post);
+// });
 
 // Do not comment out or delete this end point. The React development server
 // won't start until it pings this end point successfully.

@@ -5,14 +5,26 @@ const db = initDb();
 
 export const getTasks = () => db.any("SELECT * FROM tasks");
 
-//display all info form blog db
-export const getPostOne = () =>
-  db.any(
-    "SELECT title, date, description, steps, ingredients FROM blog WHERE id = 1",
+export const getPost1 = () => db.any("SELECT * FROM blog1");
+
+export const getPost2 = () => db.any("SELECT * FROM blog2");
+
+export const getPost3 = () => db.any("SELECT * FROM blog3");
+
+export const addPost = async ({
+  date,
+  title,
+  description,
+  steps,
+  ingredients,
+}) =>
+  await db.any(
+    "INSERT INTO blog(date, title, description, steps, ingredients) VALUES(${date}, ${$title}, ${description}, ${steps}, ${ingredients} }) RETURNING *",
+    { date, title, description, steps, ingredients },
   );
 
-export const addPost = (name) =>
-  db.one("INSERT INTO tasks(name) VALUES(${name}) RETURNING *", { name });
+// export const addEntry = ({ body }) =>
+//   db.one("INSERT INTO entries(entry) VALUES(${body}) RETURNING *", { body });
 
 function initDb() {
   let connection;
