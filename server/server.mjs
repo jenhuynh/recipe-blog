@@ -1,11 +1,18 @@
 import express from "express";
 import mime from "mime-types";
 
-import taskRouter from "./taskRouter.mjs";
-
+// import taskRouter from "./taskRouter.mjs";
+import postRouter from "./postRouter.mjs";
 const app = express();
 
-app.use("/api/tasks", taskRouter);
+// app.use("/api/tasks", taskRouter);
+
+//use router in server
+app.use("/api/posts", postRouter);
+postRouter.get("/api/posts", async (request, response) => {
+  const post = await db.getPostOne();
+  response.json(post);
+});
 
 // Do not comment out or delete this end point. The React development server
 // won't start until it pings this end point successfully.
