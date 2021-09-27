@@ -5,7 +5,13 @@ const db = initDb();
 
 export const getTasks = () => db.any("SELECT * FROM tasks");
 
-export const addTask = (name) =>
+//display all info form blog db
+export const getPostOne = () =>
+  db.any(
+    "SELECT title, date, description, steps, ingredients FROM blog WHERE id = 1",
+  );
+
+export const addPost = (name) =>
   db.one("INSERT INTO tasks(name) VALUES(${name}) RETURNING *", { name });
 
 function initDb() {
