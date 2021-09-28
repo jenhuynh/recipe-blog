@@ -98,12 +98,15 @@ const AddRecipeForm = ({ addPost }) => {
       <div>
         <div>
           <label>
-            <input name="date" type="date" placeholder="Add date" />
+            Date (required*):{" "}
+            <input name="date" type="date" placeholder="Add date" required />
           </label>
           <label>
-            <input name="title" type="text" placeholder="Add title" />
+            Title (required*):{" "}
+            <input name="title" type="text" placeholder="Add title" required />
           </label>
           <label>
+            Description:{" "}
             <input
               name="description"
               type="text"
@@ -111,6 +114,7 @@ const AddRecipeForm = ({ addPost }) => {
             />
           </label>
           <label>
+            Steps (required*):{" "}
             <input
               name="steps"
               type="text"
@@ -120,6 +124,7 @@ const AddRecipeForm = ({ addPost }) => {
           </label>
         </div>
         <div>
+          Ingredients (required*):{" "}
           <label>
             <input
               name="ingredients"
@@ -128,6 +133,7 @@ const AddRecipeForm = ({ addPost }) => {
               required
             />
           </label>
+          Recipe Image:{" "}
           <label>
             <input
               name="imageurl"
@@ -136,6 +142,7 @@ const AddRecipeForm = ({ addPost }) => {
             />
           </label>{" "}
           <label>
+            Credit (name or url):
             <input
               name="credit"
               type="text"
