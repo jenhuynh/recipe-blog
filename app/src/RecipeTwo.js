@@ -2,7 +2,7 @@ import * as React from "react";
 
 import * as apiClient from "./apiClient";
 
-import "./RecipeOne.css";
+import "./Recipes.css";
 
 const Recipes = () => {
   const [post, setPost] = React.useState([]);
@@ -19,7 +19,7 @@ const Recipes = () => {
 
   return (
     <>
-      <AddRecipeForm />
+      {/* <AddRecipeForm /> */}
       <div className="recipe-one" id="sectionOne">
         {post.map(({ id, title, date, description, steps, ingredients }) => (
           <li key={id}>
