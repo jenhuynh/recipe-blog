@@ -15,10 +15,11 @@ export const getPost3 = async () => {
   const response = await fetch("/api/posts/3");
   return response.json();
 };
-// export const addPost = async () => {
-//   const response = await fetch("/api/posts");
-//   return response.json();
-// };
+
+export const addPost = async () => {
+  const response = await fetch("/api/posts/1");
+  return response.json();
+};
 // export const addPost = (post) => {
 //   console.log("apiClient", post);
 //   return _post("/api/posts", { post });
