@@ -19,7 +19,7 @@ postRouter.get("/3", async (request, response) => {
   response.json(posts);
 });
 postRouter.post("/", async (request, response) => {
-  const post = await db.addPost(request.body.name);
+  const post = await db.addPost(request.body);
   response.status(201).json(post);
 });
 
