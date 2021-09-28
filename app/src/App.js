@@ -15,9 +15,11 @@ import "./RecipeThree.css";
 const App = () => (
   <>
     <nav>
-      <Link to="/">Home</Link> | <Link to="recipeOne">Recipe One</Link>|{" "}
-      <Link to="recipeTwo">Recipe Two</Link> |{" "}
-      <Link to="recipeThree">Recipe Three</Link> | <Link to="admin">Admin</Link>
+      <Link to="/">Home</Link>
+      <Link to="recipeOne">Recipe One</Link>
+      <Link to="recipeTwo">Recipe Two</Link>
+      <Link to="recipeThree">Recipe Three</Link>
+      <Link to="admin">Admin</Link>
     </nav>
     <main>
       <Routes>
@@ -82,12 +84,5 @@ const Recipe = () => (
     <p>bdknihfwihfehfewio</p>
   </>
 );
-
-// const Admin = () => (
-//   <>
-//     <h1>Admin</h1>
-//     <p>bdknihfwihfehfewio</p>
-//   </>
-// );
 
 export default App;
