@@ -2,7 +2,7 @@ import * as React from "react";
 
 import * as apiClient from "./apiClient";
 
-import "./Recipes.css";
+import "./RecipeThree.css";
 
 const Recipes = () => {
   const [post, setPost] = React.useState([]);
@@ -21,15 +21,38 @@ const Recipes = () => {
     <>
       {/* <AddRecipeForm /> */}
       <div className="recipe-one" id="sectionOne">
-        {post.map(({ id, title, date, description, steps, ingredients }) => (
-          <li key={id}>
-            <h2>{title}</h2>
-            <h6>{date}</h6>
-            <p>{description}</p>
-            <p>{steps}</p>
-            <p>{ingredients}</p>
-          </li>
-        ))}
+        {post.map(
+          ({
+            id,
+            title,
+            // imageurl,
+            date,
+            description,
+            steps,
+            ingredients,
+            credit,
+          }) => (
+            <li key={id}>
+              <h2>{title}</h2>
+              {/* {imageurl ? (
+                <img
+                  src={`/api/posts/1/image`}
+                  alt="image of air fried roasted potatoes"
+                  style={{
+                    width: 200,
+                    objectFit: "contain",
+                    marginLeft: "1rem",
+                  }}
+                />
+              ) : null} */}
+              <h6>{date}</h6>
+              <p>{description}</p>
+              <p>{steps}</p>
+              <p>{ingredients}</p>
+              <p>{credit}</p>
+            </li>
+          ),
+        )}
       </div>
     </>
   );
