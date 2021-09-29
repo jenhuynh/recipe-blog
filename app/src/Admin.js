@@ -4,6 +4,7 @@ import * as apiClient from "./apiClient";
 
 import "./Recipes.css";
 
+import "./Admin.css";
 const Admin = () => {
   const [post, setPost] = React.useState([]);
 
@@ -74,7 +75,7 @@ const AddRecipeForm = ({ addPost }) => {
       description: { value: description },
       steps: { value: steps },
       ingredients: { value: ingredients },
-      image: { value: imageurl },
+      imageurl: { value: imageurl },
       credit: { value: credit },
     } = form.elements;
 
@@ -93,63 +94,88 @@ const AddRecipeForm = ({ addPost }) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <h3>Add new recipe:</h3>
-      <div>
+    <>
+      <form onSubmit={onSubmit}>
+        <p>
+          <h3>Add new recipe:</h3>
+        </p>
         <div>
-          <label>
-            Date (required*):{" "}
-            <input name="date" type="date" placeholder="Add date" required />
-          </label>
-          <label>
-            Title (required*):{" "}
-            <input name="title" type="text" placeholder="Add title" required />
-          </label>
-          <label>
-            Description:{" "}
-            <input
-              name="description"
-              type="text"
-              placeholder="Add description"
-            />
-          </label>
-          <label>
-            Steps (required*):{" "}
-            <input
-              name="steps"
-              type="text"
-              placeholder="List the steps"
-              required
-            />
-          </label>
-        </div>
-        <div>
-          Ingredients (required*):{" "}
-          <label>
-            <input
-              name="ingredients"
-              type="text"
-              placeholder="List ingredients"
-              required
-            />
-          </label>
-          Recipe Image:{" "}
-          <label>
-            <input
-              name="imageurl"
-              type="text"
-              placeholder="Insert an image url to go with your recipe"
-            />
-          </label>{" "}
-          <label>
-            Credit (name or url):
-            <input
-              name="credit"
-              type="text"
-              placeholder="Include url or name to where recipe came from"
-            />
-          </label>
-          {/* <label>
+          <div>
+            <p>
+              <label>
+                Date (required*):{" "}
+                <input
+                  name="date"
+                  type="date"
+                  placeholder="Add date"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                Title (required*):{" "}
+                <input
+                  name="title"
+                  type="text"
+                  placeholder="Add title"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                Description:{" "}
+                <input
+                  name="description"
+                  type="text"
+                  placeholder="Add description"
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                Steps (required*):{" "}
+                <input
+                  name="steps"
+                  type="text"
+                  placeholder="List the steps"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                Ingredients (required*):{" "}
+                <input
+                  name="ingredients"
+                  type="text"
+                  placeholder="List ingredients"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              Recipe Image:{" "}
+              <label>
+                <input
+                  name="imageurl"
+                  type="text"
+                  placeholder="Insert an image url to go with your recipe"
+                />
+              </label>{" "}
+            </p>
+            <p>
+              <label>
+                Credit (name or url):
+                <input
+                  name="credit"
+                  type="text"
+                  placeholder="Include url or name to where recipe came from"
+                />
+              </label>
+            </p>
+            {/* <label>
             <input
               name="imageurl"
               onChange={(e) => setPost(e.currentTarget.value)}
@@ -157,10 +183,11 @@ const AddRecipeForm = ({ addPost }) => {
             />
           </label>
           <input name="image" type="file" /> */}
-          <button>Add Recipe</button>
+            <button>Add Recipe</button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </>
   );
 };
 
