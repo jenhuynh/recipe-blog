@@ -1,0 +1,22 @@
+form {
+  box-sizing: border-box;
+  border: 2px solid #798777;
+  margin: 50px;
+  padding: 20px;
+  width: 85%;
+  height: 850px;
+}
+input[type="text"],
+select,
+textarea,
+button {
+  width: 45%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+button {
+  margin: 0;
+  position: absolute;
+}
