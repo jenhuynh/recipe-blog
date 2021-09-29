@@ -46,7 +46,8 @@ CREATE TABLE public.blog1 (
     description character varying,
     steps character varying,
     ingredients character varying,
-    imageurl character varying
+    imageurl character varying,
+    credit text
 );
 
 
@@ -75,7 +76,8 @@ CREATE TABLE public.blog2 (
     description character varying,
     steps character varying,
     ingredients character varying,
-    imageurl character varying
+    imageurl character varying,
+    credit text
 );
 
 
@@ -104,7 +106,8 @@ CREATE TABLE public.blog3 (
     description character varying,
     steps character varying,
     ingredients character varying,
-    imageurl character varying
+    imageurl character varying,
+    credit text
 );
 
 
@@ -114,6 +117,36 @@ CREATE TABLE public.blog3 (
 
 ALTER TABLE public.blog3 ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
     SEQUENCE NAME public.blog3_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- Name: blog4; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.blog4 (
+    id integer NOT NULL,
+    title text NOT NULL,
+    date date NOT NULL,
+    description character varying,
+    steps character varying,
+    ingredients character varying,
+    imageurl character varying,
+    credit text
+);
+
+
+--
+-- Name: blog4_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+ALTER TABLE public.blog4 ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME public.blog4_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -188,8 +221,8 @@ COPY public.blog (id, title, date, description, steps, ingredients, image) FROM 
 -- Data for Name: blog1; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.blog1 (id, title, date, description, steps, ingredients, imageurl) FROM stdin;
-1	Easy Tuna Casserole	2020-08-23	Step 1:Preheat oven to 350 degrees F (175 degrees C). Step 2: In a 9x13-inch baking dish, combine the macaroni, tuna, and soup. Mix well, and then top with cheese. Step 3: Bake at 350 degrees F (175 degrees C) for about 25 minutes, or until bubbly. Sprinkle with fried onions, and bake for another 5 minutes. Serve hot.	Step 1:Preheat oven to 350 degrees F (175 degrees C). Step 2: In a 9x13-inch baking dish, combine the macaroni, tuna, and soup. Mix well, and then top with cheese. Step 3: Bake at 350 degrees F (175 degrees C) for about 25 minutes, or until bubbly. Sprinkle with fried onions, and bake for another 5 minutes. Serve hot.	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.	\N
+COPY public.blog1 (id, title, date, description, steps, ingredients, imageurl, credit) FROM stdin;
+1	Easy Tuna Casserole	2020-08-23	Tuna, macaroni, creamy soup, cheese and fried onions are all you need to make this super easy tuna casserole that I learned from my roommate. It is great as leftovers, too.	Step 1:Preheat oven to 350 degrees F (175 degrees C). Step 2: In a 9x13-inch baking dish, combine the macaroni, tuna, and soup. Mix well, and then top with cheese. Step 3: Bake at 350 degrees F (175 degrees C) for about 25 minutes, or until bubbly. Sprinkle with fried onions, and bake for another 5 minutes. Serve hot.	3 cups cooked macaroni, One 5 oz. can tuna, drained, One 1-.75 oz. can condensed cream of chicken soup, 1 cup shredded cheddar cheese, 1 1/2 french fried onions	https://www.thegunnysack.com/wp-content/uploads/2020/02/Tuna-Noodle-Casserole.jpg	Credit: https://www.allrecipes.com/recipe/18871/easy-tuna-casserole/
 \.
 
 
@@ -197,8 +230,8 @@ COPY public.blog1 (id, title, date, description, steps, ingredients, imageurl) F
 -- Data for Name: blog2; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.blog2 (id, title, date, description, steps, ingredients, imageurl) FROM stdin;
-1	Ground Beef Curly Noodle	2015-03-07	An easy, quick and economical recipe that kids really like. Ground beef, noodles, corn and tomatoes make a complete meal in one skillet. My sister who ran a daycare used to make this and everybody enjoyed it. Credit: https://www.allrecipes.com/recipe/73402/ground-beef-curly-noodle/	Step 1: Heat a large skillet over medium-high heat. Crumble in the ground beef, and cook until no longer pink, stirring frequently. Drain off grease. Step 2: Stir in the flavor packet from the noodles, tomatoes, and corn (with their juices). Break up the noodles slightly, and add them to the skillet. Bring to a boil, then reduce heat to low, cover, and simmer for 10 minutes, or until noodles are tender. Stir occasionally to break up any clumps of noodles.	1 pound ground beef, One 3 oz package Oriental flavored ramen noodles, One 14.5 oz can diced tomatoes, One 10 oz can whole kernel corn	\N
+COPY public.blog2 (id, title, date, description, steps, ingredients, imageurl, credit) FROM stdin;
+1	Ground Beef Curly Noodle	2015-03-07	An easy, quick and economical recipe that kids really like. Ground beef, noodles, corn and tomatoes make a complete meal in one skillet. My sister who ran a daycare used to make this and everybody enjoyed it.	Step 1: Heat a large skillet over medium-high heat. Crumble in the ground beef, and cook until no longer pink, stirring frequently. Drain off grease. Step 2: Stir in the flavor packet from the noodles, tomatoes, and corn (with their juices). Break up the noodles slightly, and add them to the skillet. Bring to a boil, then reduce heat to low, cover, and simmer for 10 minutes, or until noodles are tender. Stir occasionally to break up any clumps of noodles.	1 pound ground beef, One 3 oz package Oriental flavored ramen noodles, One 14.5 oz can diced tomatoes, One 10 oz can whole kernel corn	https://menus-makelleyandcompa.netdna-ssl.com/wp-content/uploads/2019/08/easy-skillet-ramen-feat-min-690x345.jpg	https://www.allrecipes.com/recipe/73402/ground-beef-curly-noodle/
 \.
 
 
@@ -206,8 +239,16 @@ COPY public.blog2 (id, title, date, description, steps, ingredients, imageurl) F
 -- Data for Name: blog3; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.blog3 (id, title, date, description, steps, ingredients, imageurl) FROM stdin;
-1	Air Fryer One-Bite Roasted Potatoes	2019-05-12	These air-fried roasted one-bite potatoes are crispy on the outside and creamy on the inside. Quick and easy to make. Credit: https://www.allrecipes.com/recipe/282437/air-fryer-one-bite-roasted-potatoes/	Step 1: Preheat the air fryer to 400 degrees F (200 degrees C). Step 2: Wash and dry potatoes. Trim edges to make a flat surface on both ends. Step 3: Combine extra-virgin olive oil and salad dressing mix in a large bowl. Add potatoes and toss until potatoes are well coated. Place in a single layer into the air fryer basket. Cook in batches if necessary. Step 4: Air fry until potatoes are golden brown, 5 to 7 minutes. Flip potatoes and air fry for an additional 2 to 3 minutes. Season with salt and pepper.	½ pound mini potatoes, 2 teaspoons extra-virgin olive oil, 2 teaspoons dry Italian-style salad dressing mix, salt and ground black pepper to taste	\N
+COPY public.blog3 (id, title, date, description, steps, ingredients, imageurl, credit) FROM stdin;
+1	Air Fryer One-Bite Roasted Potatoes	2019-05-12	These air-fried roasted one-bite potatoes are crispy on the outside and creamy on the inside. Quick and easy to make.	Step 1: Preheat the air fryer to 400 degrees F (200 degrees C). Step 2: Wash and dry potatoes. Trim edges to make a flat surface on both ends. Step 3: Combine extra-virgin olive oil and salad dressing mix in a large bowl. Add potatoes and toss until potatoes are well coated. Place in a single layer into the air fryer basket. Cook in batches if necessary. Step 4: Air fry until potatoes are golden brown, 5 to 7 minutes. Flip potatoes and air fry for an additional 2 to 3 minutes. Season with salt and pepper.	½ pound mini potatoes, 2 teaspoons extra-virgin olive oil, 2 teaspoons dry Italian-style salad dressing mix, salt and ground black pepper to taste	https://eatthegains.com/wp-content/uploads/2019/01/Air-Fryer-Potatoes-6.jpg	https://www.allrecipes.com/recipe/282437/air-fryer-one-bite-roasted-potatoes/
+\.
+
+
+--
+-- Data for Name: blog4; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.blog4 (id, title, date, description, steps, ingredients, imageurl, credit) FROM stdin;
 \.
 
 
@@ -243,6 +284,13 @@ SELECT pg_catalog.setval('public.blog2_id_seq', 1, true);
 --
 
 SELECT pg_catalog.setval('public.blog3_id_seq', 1, true);
+
+
+--
+-- Name: blog4_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.blog4_id_seq', 2, true);
 
 
 --
