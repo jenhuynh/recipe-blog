@@ -1,7 +1,9 @@
 body {
   background-color: #f8ede3;
   margin: 0px;
+  font-family: "Josefin Sans", sans-serif;
 }
+
 main a {
   text-decoration: none;
   color: #4f674a;
@@ -14,4 +16,53 @@ nav {
 nav a {
   text-decoration: none;
   color: rgb(59, 75, 59);
+  padding: 10px;
+  float: right;
+  font-size: 1.2em;
+}
+h1 {
+  text-align: center;
+}
+.header-txt {
+  color: #053a11;
+  font-size: 7rem;
+  font-style: 600;
+  padding: 120px 0;
+  text-align: center;
+  margin: 0px;
+  text-shadow: 2px 2px #ffffff;
+}
+
+.header-img {
+  background-image: url(https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  width: 100%;
+  height: 400px;
+  margin: 0px;
+  opacity: 0.9;
+}
+
+.body {
+  margin: 60px;
+}
+
+.recipe1-card {
+  text-align: center;
+  width: 100%;
+}
+
+.recipe1-card img {
+  width: 900px;
+}
+
+.recipe2-card {
+  text-align: center;
+  width: 100%;
+}
+
+.recipe2-card img {
+  width: 900px;
+  height: 630px;
+}
+.recipe3-card {
+  text-align: center;
 }
