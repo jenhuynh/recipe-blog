@@ -29,27 +29,29 @@ const Recipes = () => {
             description,
             steps,
             ingredients,
-            // imageurl,
+            imageurl,
             credit,
           }) => (
             <li key={id}>
               <h2>{title}</h2>
-              {/* {imageurl ? (
+              {imageurl ? (
                 <img
-                  src={`/api/posts/1`}
-                  alt="image of ground beef curly noodle"
+                  src={imageurl}
+                  alt="image of tuna casserole"
                   style={{
-                    width: 200,
+                    width: 700,
                     objectFit: "contain",
                     marginLeft: "1rem",
                   }}
                 />
-              ) : null} */}
+              ) : null}
               <h6>{date}</h6>
               <p>{description}</p>
               <p>{steps}</p>
               <p>{ingredients}</p>
-              <p>{credit}</p>
+              <a href={credit} target="_blank">
+                Recipe by All Recipes
+              </a>
             </li>
           ),
         )}
