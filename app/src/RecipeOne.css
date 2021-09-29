@@ -1,3 +1,12 @@
 li {
   list-style: none;
 }
+.recipe-one a,
+h2,
+p,
+h6 {
+  margin: 50px;
+}
+img .tuna-img {
+  margin-left: 45px;
+}
