@@ -11,16 +11,20 @@ export const getPost2 = () => db.any("SELECT * FROM blog2");
 
 export const getPost3 = () => db.any("SELECT * FROM blog3");
 
+export const getPost4 = () => db.any("SELECT * FROM blog4");
+
 export const addPost = async ({
   date,
   title,
   description,
   steps,
   ingredients,
+  imageurl,
+  credit,
 }) =>
   await db.any(
-    "INSERT INTO blog(date, title, description, steps, ingredients) VALUES(${date}, ${$title}, ${description}, ${steps}, ${ingredients} }) RETURNING *",
-    { date, title, description, steps, ingredients },
+    "INSERT INTO blog4(date, title, description, steps, ingredients, imageurl, credit) VALUES($1, $2, $3, $4, $5, $6, $7)",
+    [date, title, description, steps, ingredients, imageurl, credit],
   );
 
 // export const addEntry = ({ body }) =>
