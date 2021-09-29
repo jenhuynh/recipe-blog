@@ -30,6 +30,11 @@ postRouter.post("/api/post/3", async (request, response) => {
   response.json(post);
 });
 
+postRouter.post("/api/post/4", async (request, response) => {
+  const post = await db.addPost4();
+  response.json(post);
+});
+
 // app.use("/api/posts", postRouter);
 // postRouter.get("/api/posts", async (request, response) => {
 //   const post = await db.getPostTwo();
