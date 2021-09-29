@@ -18,9 +18,17 @@ postRouter.get("/3", async (request, response) => {
   const posts = await db.getPost3();
   response.json(posts);
 });
-postRouter.post("/", async (request, response) => {
-  const post = await db.addPost(request.body);
-  response.status(201).json(post);
+
+postRouter.get("/4", async (request, response) => {
+  const posts = await db.getPost4();
+  response.json(posts);
+});
+
+//got to put before post method
+postRouter.use(express.json());
+
+postRouter.post("/4", async (req, res) => {
+  res.status(201).json(await db.addPost(req.body));
 });
 
 // postRouter.get("/", async (request, response) => {
