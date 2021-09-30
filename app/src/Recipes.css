@@ -3,7 +3,10 @@ body {
   margin: 0px;
   font-family: "Josefin Sans", sans-serif;
 }
-
+.sticky {
+  display: flex;
+  justify-content: right;
+}
 main a {
   text-decoration: none;
   color: #4f674a;
@@ -11,13 +14,14 @@ main a {
 nav {
   border: 3px solid white;
   background-color: white;
-  height: 3rem;
+  height: 30%;
 }
 nav a {
   text-decoration: none;
   color: rgb(59, 75, 59);
-  padding: 10px;
-  float: right;
+  padding: 20px;
+  /* float: right; */
+  /* position: sticky; */
   font-size: 1.2em;
 }
 h1 {
@@ -25,12 +29,13 @@ h1 {
 }
 .header-txt {
   color: #053a11;
-  font-size: 7rem;
+  font-size: 6.5rem;
   font-style: 600;
-  padding: 120px 0;
+  padding: 10% 0;
   text-align: center;
   margin: 0px;
   text-shadow: 2px 2px #ffffff;
+  width: 100%;
 }
 
 .header-img {
@@ -47,22 +52,43 @@ h1 {
 
 .recipe1-card {
   text-align: center;
-  width: 100%;
 }
 
 .recipe1-card img {
-  width: 900px;
+  /* width: 900px; */
+  width: 60%;
+  height: 50%;
 }
 
 .recipe2-card {
   text-align: center;
-  width: 100%;
 }
 
 .recipe2-card img {
-  width: 900px;
-  height: 630px;
+  /* width: 900px; */
+  width: 60%;
+  height: 50%;
 }
 .recipe3-card {
   text-align: center;
+}
+
+.recipe3-card img {
+  width: 60%;
+  height: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .sticky {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .sticky {
+    font-size: 0.5em;
+    line-height: 15px;
+  }
+  .header-txt {
+    font-size: 5em;
+  }
 }
