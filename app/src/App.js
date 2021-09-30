@@ -15,11 +15,11 @@ import "./RecipeThree.css";
 const App = () => (
   <>
     <nav className="sticky">
-      <Link to="admin">Admin</Link>
-      <Link to="recipeTwo">Ground Beef Curly Noodle</Link>
-      <Link to="recipeThree">Air Fryer Potatoes</Link>
-      <Link to="recipeOne">Easy Tuna Casserole</Link>
       <Link to="/">Home</Link>
+      <Link to="recipeOne">Easy Tuna Casserole</Link>
+      <Link to="recipeThree">Air Fryer Potatoes</Link>
+      <Link to="recipeTwo">Ground Beef Curly Noodle</Link>
+      <Link to="admin">Admin</Link>
     </nav>
     <main>
       <Routes>
@@ -54,7 +54,7 @@ const Recipe1 = () => {
   return (
     <>
       <div className="recipe3-card" id="section1">
-        <a href="http://localhost:3000/recipeThree">
+        <a className="recipe-links" href="http://localhost:3000/recipeThree">
           <h1>Air Fried Potatoes</h1>
           <h4>
             These air-fried roasted one-bite potatoes are crispy on the outside
