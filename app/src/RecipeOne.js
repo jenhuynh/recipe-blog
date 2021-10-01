@@ -1,17 +1,12 @@
 import * as React from "react";
 
-import ReactMarkdown from "react-markdown";
-
 import * as apiClient from "./apiClient";
+
 import "./RecipeOne.css";
 const RecipeOne = () => {
   const [post, setPost] = React.useState([]);
 
-  // const [tasks, setTasks] = React.useState([]);
-
   const loadPost = async () => setPost(await apiClient.getPost1());
-
-  // const addPost = (post) => apiClient.addPost(post).then(loadPost);
 
   React.useEffect(() => {
     loadPost();
@@ -39,18 +34,15 @@ const RecipeOne = () => {
                     className="tuna-img"
                     src={imageurl}
                     alt="image of tuna casserole"
-                    style={{
-                      width: 700,
-                      objectFit: "contain",
-                      marginLeft: "1rem",
-                    }}
                   />
                 ) : null}
-                <h6>{date}</h6>
-                <ReactMarkdown>{description}</ReactMarkdown>
-                <ReactMarkdown>{steps}</ReactMarkdown>
+                <h5>Date: {date}</h5>
+                <p>{description}</p>
+                <h6>Steps</h6>
+                <p>{steps}</p>
+                <h6>Ingredients</h6>
                 <p>{ingredients}</p>
-                <a href={credit} target="_blank">
+                <a href={credit} target="_blank" className="creditLink">
                   Recipe by All Recipes
                 </a>
               </div>
