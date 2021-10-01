@@ -1,7 +1,17 @@
-# React Client App
+# React Client App - Sweet Home Kitchen
+
+Sweet Home Kitchen's app is a budget friendly application that encourages people to have fun trying new recipes, cook, bake, and make them on a budget!
 
 This project was bootstrapped with [Create React
 App](https://github.com/facebook/create-react-app).
+
+## Run Project
+
+1. Git clone the clipboard from my Github repository
+
+2. Open the project in your favorite code editor such as VSCode and run the app by doing npm start
+
+3. Enjoy the app!
 
 ## Project Structure
 
