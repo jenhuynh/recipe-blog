@@ -7,11 +7,7 @@ import "./RecipeTwo.css";
 const Recipes = () => {
   const [post, setPost] = React.useState([]);
 
-  // const [tasks, setTasks] = React.useState([]);
-
   const loadPost = async () => setPost(await apiClient.getPost2());
-
-  // const addPost = (post) => apiClient.addPost(post).then(loadPost);
 
   React.useEffect(() => {
     loadPost();
@@ -19,7 +15,6 @@ const Recipes = () => {
 
   return (
     <>
-      {/* <AddRecipeForm /> */}
       <div className="recipe-one" id="sectionOne">
         {post.map(
           ({
