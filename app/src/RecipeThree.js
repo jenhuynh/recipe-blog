@@ -33,16 +33,14 @@ const Recipes = () => {
                 <img
                   src={imageurl}
                   alt="image of air fried roasted potatoes"
-                  style={{
-                    width: 500,
-                    objectFit: "contain",
-                    marginLeft: "1rem",
-                  }}
+                  className="potatoesImg"
                 />
               ) : null}
-              <h6>{date}</h6>
+              <h5>Date: {date}</h5>
               <p>{description}</p>
+              <h6>Steps</h6>
               <p>{steps}</p>
+              <h6>Ingredients</h6>
               <p>{ingredients}</p>
               <a href={credit} target="_blank">
                 Recipe by All Recipes
