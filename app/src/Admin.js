@@ -21,7 +21,7 @@ const Admin = () => {
   return (
     <>
       {" "}
-      <h1>Add Recipe</h1>
+      <h1>Add New Recipe</h1>
       <AddRecipeForm addPost={addPost} />{" "}
       <>
         {/* <AddRecipeForm /> */}
@@ -98,9 +98,6 @@ const AddRecipeForm = ({ addPost }) => {
       <div>
         <form onSubmit={onSubmit}>
           <p>
-            <h3>Add new recipe:</h3>
-          </p>
-          <p>
             <label>
               Date (required*):{" "}
               <input name="date" type="date" placeholder="Add date" required />
@@ -169,14 +166,6 @@ const AddRecipeForm = ({ addPost }) => {
               />
             </label>
           </p>
-          {/* <label>
-            <input
-              name="imageurl"
-              onChange={(e) => setPost(e.currentTarget.value)}
-              value={imageurl}
-            />
-          </label>
-          <input name="image" type="file" /> */}
           <div className="formBtn">
             <button>Add Recipe</button>
           </div>
