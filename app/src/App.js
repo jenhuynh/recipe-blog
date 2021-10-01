@@ -62,7 +62,7 @@ const Recipe1 = () => {
             roommate.{" "}
           </h4>
         </a>
-        <a href="http://localhost:3000/recipeThree">
+        <a href="http://localhost:3000/recipeOne">
           <img
             src="https://www.thekitchenwhisperer.net/wp-content/uploads/2020/02/Hot-Tuna-Noodle-Casserole-1.jpg"
             alt="image of tuna casserole"
