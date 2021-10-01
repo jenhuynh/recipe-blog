@@ -37,17 +37,15 @@ const Recipes = () => {
               {imageurl ? (
                 <img
                   src={imageurl}
-                  alt="image of tuna casserole"
-                  style={{
-                    width: 700,
-                    objectFit: "contain",
-                    marginLeft: "1rem",
-                  }}
+                  alt="image of ground beef curly noodles"
+                  className="groundBeefImg"
                 />
               ) : null}
-              <h6>{date}</h6>
+              <h5>Date: {date}</h5>
               <p>{description}</p>
+              <h6>Steps</h6>
               <p>{steps}</p>
+              <h6>Ingredients</h6>
               <p>{ingredients}</p>
               <a href={credit} target="_blank">
                 Recipe by All Recipes
