@@ -1,0 +1,36 @@
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid #798777;
+  border-radius: 10px;
+  margin: auto;
+  width: 50%;
+}
+label {
+  height: 15%;
+}
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+}
+button {
+  width: 90px;
+  height: 40px;
+  resize: vertical;
+  background-color: white;
+  border: 1px solid #798777;
+  border-radius: 5px;
+  color: hsl(113, 60%, 23%);
+  border-radius: 4px;
+}
+.formBtn {
+  margin-left: 40%;
+  padding: 10px;
+}

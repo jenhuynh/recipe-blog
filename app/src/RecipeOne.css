@@ -1,0 +1,25 @@
+body {
+  margin-bottom: 20px;
+}
+h2 {
+  text-align: center;
+  font-size: 2.5em;
+}
+li {
+  list-style: none;
+}
+.recipe-one a,
+h2,
+p,
+h5 {
+  margin: 50px;
+}
+.tuna-img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
+}
+h6 {
+  font-size: 1.5em;
+}
